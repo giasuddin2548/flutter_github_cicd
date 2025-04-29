@@ -11,55 +11,47 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      # Checkout repository
       - uses: actions/checkout@v4
 
-      # Setup Flutter
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
 
-      # Install project dependencies
       - name: Install dependencies
         run: flutter pub get
 
-      # Format check
       - name: Verify formatting
         run: dart format --output=none --set-exit-if-changed .
 
-      # Static analysis
       - name: Analyze project source
         run: flutter analyze
 
-      # Run tests (basic test needed to avoid 0 test error)
       - name: Run tests
         run: flutter test
 
-      # Build Android APK
+      # ✅ Build Android APK
       - name: Build Android APK
         run: flutter build apk --release
 
-      # Install Firebase CLI
-      - name: Install Firebase CLI
-        run: curl -sL https://firebase.tools | bash
-
-      # Upload APK to Firebase using Firebase CLI
+      # ✅ Upload APK to Firebase App Distribution
       - name: Upload APK to Firebase App Distribution
+        if: success()
         run: |
           firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
             --app ${{ secrets.FIREBASE_APP_ID_ANDROID }} \
             --token ${{ secrets.FIREBASE_CLI_TOKEN }} \
             --groups "all_testers"
 
-      # Build iOS IPA
+      # ✅ Build iOS IPA (Add ExportOptions.plist with signing configs)
       - name: Build iOS IPA
         run: flutter build ipa --release --export-options-plist=ios/ExportOptions.plist
 
-      # Upload IPA to Firebase using Firebase CLI (required for macOS runner)
+      # ✅ Upload IPA to Firebase App Distribution
       - name: Upload IPA to Firebase App Distribution
+        if: success()
         run: |
           firebase appdistribution:distribute build/ios/ipa/Runner.ipa \
-          --app ${{ secrets.FIREBASE_APP_ID_IOS }} \
-          --token ${{ secrets.FIREBASE_CLI_TOKEN }} \
-          --groups "all_testers"
+            --app ${{ secrets.FIREBASE_APP_ID_IOS }} \
+            --token ${{ secrets.FIREBASE_CLI_TOKEN }} \
+            --groups "all_testers"
