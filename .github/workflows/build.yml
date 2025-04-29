@@ -50,7 +50,7 @@ jobs:
           firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
             --app ${{ secrets.FIREBASE_APP_ID_ANDROID }} \
             --token ${{ secrets.FIREBASE_CLI_TOKEN }} \
-            --groups "office"
+            --groups "office" \
             --release-notes "Bug fixes and performance improvements."
 
 #      # Build iOS IPA-> ios will be deployed due to profiles
