@@ -40,24 +40,23 @@ jobs:
       - name: Build Android APK
         run: flutter build apk --release
 
-      # Upload APK to Firebase App Distribution
+      # Install Firebase CLI
+      - name: Install Firebase CLI
+        run: curl -sL https://firebase.tools | bash
+
+      # Upload APK to Firebase using Firebase CLI
       - name: Upload APK to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1.7.0
-        with:
-          appId: ${{ secrets.FIREBASE_APP_ID_ANDROID }}
-          serviceCredentialsFileContent: ${{ secrets.SERVICE_CREDENTIALS_FILE_CONTENT }}
-          groups: all_testers
-          file: build/app/outputs/flutter-apk/app-release.apk
+        run: |
+          firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
+            --app ${{ secrets.FIREBASE_APP_ID_ANDROID }} \
+            --token ${{ secrets.FIREBASE_CLI_TOKEN }} \
+            --groups "all_testers"
 
       # Build iOS IPA
       - name: Build iOS IPA
         run: flutter build ipa --release --export-options-plist=ios/ExportOptions.plist
 
-      # Install Firebase CLI
-      - name: Install Firebase CLI
-        run: curl -sL https://firebase.tools | bash
-
-      # Upload IPA using Firebase CLI (required for macOS runner)
+      # Upload IPA to Firebase using Firebase CLI (required for macOS runner)
       - name: Upload IPA to Firebase App Distribution
         run: |
           firebase appdistribution:distribute build/ios/ipa/Runner.ipa \
