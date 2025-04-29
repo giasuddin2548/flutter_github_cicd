@@ -50,6 +50,26 @@ jobs:
         run: flutter test
 
 
-      # Create android apk
-      - name: Build apk
-        run: flutter build apk
+      # Android APK build
+      - name: Build Android APK
+        run: flutter build apk --release
+
+      - name: Upload APK to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1.7.0
+        with:
+          appId: ${{ secrets.FIREBASE_APP_ID_ANDROID }}
+          serviceCredentialsFileContent: ${{ secrets.SERVICE_CREDENTIALS_FILE_CONTENT }}
+          groups: all_testers
+          file: build/app/outputs/flutter-apk/app-release.apk
+
+      # iOS IPA build
+      - name: Build iOS IPA
+        run: flutter build ipa --release --export-options-plist=ios/ExportOptions.plist
+
+      - name: Upload IPA to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1.7.0
+        with:
+          appId: ${{ secrets.FIREBASE_APP_ID_IOS }}
+          serviceCredentialsFileContent: ${{ secrets.SERVICE_CREDENTIALS_FILE_CONTENT }}
+          groups: all_testers
+          file: build/ios/ipa/Runner.ipa

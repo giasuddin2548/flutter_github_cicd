@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "78791143447",
+    "project_id": "flutter-github-cicd",
+    "storage_bucket": "flutter-github-cicd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78791143447:android:d09e625f5e6145959d2c52",
+        "android_client_info": {
+          "package_name": "com.samir.flutter_github_cicd"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANT2OU7RYhukEyW43UIhQVUgP4oOp3oIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
