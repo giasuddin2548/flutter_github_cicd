@@ -54,15 +54,15 @@ jobs:
             --release-notes "Bug fixes and performance improvements."
           
 
-      # Deploy to cPanel via FTP (web app)
-      - name: Deploy to cPanel Hosting
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: aneeshaengltd.com
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: build/web/
-          server-dir: /flutter.aneeshaengltd.com/
+      # # Deploy to cPanel via FTP (web app)
+      # - name: Deploy to cPanel Hosting
+      #   uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      #   with:
+      #     server: aneeshaengltd.com
+      #     username: ${{ secrets.FTP_USERNAME }}
+      #     password: ${{ secrets.FTP_PASSWORD }}
+      #     local-dir: build/web/
+      #     server-dir: /flutter.aneeshaengltd.com/
 
 
 
