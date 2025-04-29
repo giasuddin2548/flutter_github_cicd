@@ -4,6 +4,7 @@ import 'firebase_options.dart';
 import 'home.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
@@ -13,6 +14,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Github CI-CD', home: Home());
+    return MaterialApp(title: 'Flutter CI-CD', home: Home());
   }
 }
