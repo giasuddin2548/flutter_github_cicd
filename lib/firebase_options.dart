@@ -83,5 +83,4 @@ class DefaultFirebaseOptions {
     authDomain: 'flutter-github-cicd.firebaseapp.com',
     storageBucket: 'flutter-github-cicd.firebasestorage.app',
   );
-
 }
