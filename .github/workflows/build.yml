@@ -1,59 +1,46 @@
-# Note: In a yml each level is padded by 2 spaces
 name: Flutter
 
 on:
-  # Runs this action when you push on master
   push:
     branches: [ "master" ]
-  # Runs this when a PR against master is created
   pull_request:
     branches: [ "master" ]
 
 jobs:
   flutter_job:
-
-    # The machine, we can also use windows-latest or ubuntu-latest
-    # We are choosing macos-latest because we will be also building for iOS
     runs-on: macos-latest
 
     steps:
-
-      # Clones the project on the machine
+      # Checkout repository
       - uses: actions/checkout@v4
 
-      # Installs flutter and related dependency on this machine
+      # Setup Flutter
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-#          flutter-version: '3.7.2'
-          # ^ If you want to use a specific version of flutter
 
-      # Fetches proj dependencies from pub
+      # Install project dependencies
       - name: Install dependencies
         run: flutter pub get
-        # ^ If you want to use a specific version of flutter
 
-      # Verifies if the dart code is formatted well
+      # Format check
       - name: Verify formatting
         run: dart format --output=none --set-exit-if-changed .
-        # --set-exit-if-changed stops execution if the any code is not well formatted
-        # --output=none prints files which needs to be formatted
 
-      # Checks for Symantic errors. Can be configured using analysis_options.yaml
+      # Static analysis
       - name: Analyze project source
         run: flutter analyze
-        # optionally use --fatal-warnings to stop execution if any warnings are found
 
-      # Runs unit test
+      # Run tests (basic test needed to avoid 0 test error)
       - name: Run tests
         run: flutter test
 
-
-      # Android APK build
+      # Build Android APK
       - name: Build Android APK
         run: flutter build apk --release
 
+      # Upload APK to Firebase App Distribution
       - name: Upload APK to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1.7.0
         with:
@@ -62,14 +49,18 @@ jobs:
           groups: all_testers
           file: build/app/outputs/flutter-apk/app-release.apk
 
-      # iOS IPA build
+      # Build iOS IPA
       - name: Build iOS IPA
         run: flutter build ipa --release --export-options-plist=ios/ExportOptions.plist
 
+      # Install Firebase CLI
+      - name: Install Firebase CLI
+        run: curl -sL https://firebase.tools | bash
+
+      # Upload IPA using Firebase CLI (required for macOS runner)
       - name: Upload IPA to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1.7.0
-        with:
-          appId: ${{ secrets.FIREBASE_APP_ID_IOS }}
-          serviceCredentialsFileContent: ${{ secrets.SERVICE_CREDENTIALS_FILE_CONTENT }}
-          groups: all_testers
-          file: build/ios/ipa/Runner.ipa
+        run: |
+          firebase appdistribution:distribute build/ios/ipa/Runner.ipa \
+            --app ${{ secrets.FIREBASE_APP_ID_IOS }} \
+            --token ${{ secrets.FIREBASE_CLI_TOKEN }} \
+            --groups "all_testers"
