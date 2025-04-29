@@ -52,6 +52,19 @@ jobs:
             --token ${{ secrets.FIREBASE_CLI_TOKEN }} \
             --groups "office" \
             --release-notes "Bug fixes and performance improvements."
+          
+
+      # # Deploy to cPanel via FTP (web app)
+      # - name: Deploy to cPanel Hosting
+      #   uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      #   with:
+      #     server: aneeshaengltd.com
+      #     username: ${{ secrets.FTP_USERNAME }}
+      #     password: ${{ secrets.FTP_PASSWORD }}
+      #     local-dir: build/web/
+      #     server-dir: /flutter.aneeshaengltd.com/
+
+
 
 #      # Build iOS IPA-> ios will be deployed due to profiles
 #      - name: Build iOS IPA
@@ -82,3 +95,4 @@ jobs:
 #            Also try selecting 'Product > Build' to fix the problem.
 #            Encountered error while archiving for device.
 #          Error: Process completed with exit code 1.
+
