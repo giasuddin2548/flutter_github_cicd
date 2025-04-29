@@ -65,6 +65,7 @@ jobs:
           server: aneeshaengltd.com
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: build/web
           server-dir: /flutter.aneeshaengltd.com/
 
 
