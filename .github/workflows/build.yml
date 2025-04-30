@@ -67,8 +67,16 @@ jobs:
 
 
       # Build iOS IPA-> ios will be deployed due to profiles
-      - name: Build iOS IPA
-        run: flutter build ipa --no-codesign
+      # 12.
+      - name: Flutter build ipa
+        run: |
+          flutter build ipa --no-codesign
+
+      # 13.
+      - name: Compress Archives and IPAs
+        run: |
+          cd build
+          tar -czf ios_build.tar.gz ios
 
 
       # Upload IPA to Firebase using Firebase CLI (required for macOS runner)
