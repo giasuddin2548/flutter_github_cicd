@@ -10,7 +10,7 @@ class PaymentsScreen extends StatelessWidget {
     PaymentsScreenController(DioService(dioInterceptor: DioInterceptor())),
   );
 
-  const PaymentsScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -159,6 +159,8 @@ class PaymentsScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+
+
                 SizedBox(width: screenWidth * 0.03),
                 Expanded(
                   child: ElevatedButton(

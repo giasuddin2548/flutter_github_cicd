@@ -14,7 +14,7 @@ class PromotinalAdmin extends StatelessWidget {
     PromotinalController(DioService(dioInterceptor: DioInterceptor())),
   );
 
-  const PromotinalAdmin({super.key});
+
   @override
   Widget build(BuildContext context) {
     _controller.getAccountName();

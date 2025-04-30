@@ -16,7 +16,7 @@ import '../../../../utils/app_constent.dart';
 class UpdateProfileScreen extends StatelessWidget {
   static const routeName = '/update_profile_screen';
 
-  const UpdateProfileScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +61,7 @@ class ProfileTab extends StatelessWidget {
     UpdateProfileController(DioService(dioInterceptor: DioInterceptor())),
   );
 
-  const ProfileTab({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -291,7 +291,7 @@ class ActivityTab extends StatelessWidget {
     UpdateProfileController(DioService(dioInterceptor: DioInterceptor())),
   );
 
-  const ActivityTab({super.key});
+
 
   @override
   Widget build(BuildContext context) {

@@ -12,7 +12,6 @@ class ChangePassScreen extends StatelessWidget {
     ChangePassController(DioService(dioInterceptor: DioInterceptor())),
   );
 
-  const ChangePassScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

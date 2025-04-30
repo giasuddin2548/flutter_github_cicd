@@ -14,7 +14,7 @@ class PersonalInfo extends StatelessWidget {
     PersonalInfoController(DioService(dioInterceptor: DioInterceptor())),
   );
 
-  const PersonalInfo({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -187,7 +187,7 @@ class ActivityTab extends StatelessWidget {
     PersonalInfoController(DioService(dioInterceptor: DioInterceptor())),
   );
 
-  const ActivityTab({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -492,7 +492,7 @@ class JointTab extends StatelessWidget {
     PersonalInfoController(DioService(dioInterceptor: DioInterceptor())),
   );
 
-  const JointTab({super.key});
+
 
   @override
   Widget build(BuildContext context) {

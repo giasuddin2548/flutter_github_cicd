@@ -15,9 +15,9 @@ class WithdrawScreen extends StatelessWidget {
     WithdrawScreenController(DioService(dioInterceptor: DioInterceptor())),
   );
 
-  static const routeName = '/withdraw_screen';
 
-  const WithdrawScreen({super.key});
+
+
   @override
   Widget build(BuildContext context) {
     _controller.getBalance();

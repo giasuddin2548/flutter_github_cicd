@@ -13,7 +13,7 @@ class ForgotClientId extends StatelessWidget {
     StepController(DioService(dioInterceptor: DioInterceptor())),
   );
 
-  const ForgotClientId({super.key});
+
 
   @override
   Widget build(BuildContext context) {

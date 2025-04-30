@@ -12,7 +12,7 @@ class LiveChatScreen extends StatelessWidget {
     LiveChatScreenController(DioService(dioInterceptor: DioInterceptor())),
   );
 
-  const LiveChatScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {

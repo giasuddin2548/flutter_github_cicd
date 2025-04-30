@@ -10,7 +10,7 @@ class PaymentOptionScreen extends StatelessWidget {
     PaymentsScreenController(DioService(dioInterceptor: DioInterceptor())),
   );
 
-  const PaymentOptionScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {

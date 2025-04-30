@@ -73,10 +73,7 @@ class MyApp extends StatelessWidget {
                     name: MyScannerScreen.routeName,
                     page: () => MyScannerScreen(),
                   ),
-                  GetPage(
-                    name: WithdrawScreen.routeName,
-                    page: () => WithdrawScreen(),
-                  ),
+
 
                   // GetPage(
                   //   name: ResetPasswordAdmin.routeName,
