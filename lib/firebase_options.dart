@@ -84,3 +84,8 @@ class DefaultFirebaseOptions {
     storageBucket: 'flutter-github-cicd.firebasestorage.app',
   );
 }
+
+/*
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+ */
