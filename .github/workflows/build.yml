@@ -36,61 +36,61 @@ jobs:
       - name: Run tests
         run: flutter test
 
-#      # Build Android APK
-#      - name: Build Android APK
-#        run: flutter build apk --release
+      # Build Android APK
+      - name: Build Android APK
+        run: flutter build apk --release
 
       # Install Firebase CLI
       - name: Install Firebase CLI
         run: curl -sL https://firebase.tools | bash
 
-#      # Upload APK to Firebase
-#      - name: Upload APK to Firebase App Distribution
-#        run: |
-#          firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
-#            --app ${{ secrets.FIREBASE_APP_ID_ANDROID }} \
-#            --token ${{ secrets.FIREBASE_CLI_TOKEN }} \
-#            --groups "office" \
-#            --release-notes "Bug fixes and performance improvements."
-
-      # Build iOS Archive without Codesign
-      - name: Flutter build IPA (no codesign)
-        run: flutter build ipa --no-codesign
-
-      # Export IPA from Xcode archive
-      - name: Export IPA from archive
+      # Upload APK to Firebase
+      - name: Upload APK to Firebase App Distribution
         run: |
-          xcodebuild -exportArchive \
-            -archivePath build/ios/archive/Runner.xcarchive \
-            -exportOptionsPlist ios/ExportOptions.plist \
-            -exportPath build/ios/ipa
-
-      # Upload IPA to Firebase
-      - name: Upload IPA to Firebase App Distribution
-        run: |
-          firebase appdistribution:distribute build/ios/ipa/Runner.ipa \
-            --app ${{ secrets.FIREBASE_APP_ID_IOS }} \
+          firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
+            --app ${{ secrets.FIREBASE_APP_ID_ANDROID }} \
             --token ${{ secrets.FIREBASE_CLI_TOKEN }} \
-            --groups "office"
+            --groups "office" \
+            --release-notes "Bug fixes and performance improvements."
 
-
-
-      # # Deploy to cPanel via FTP (web app)
-      # - name: Deploy to cPanel Hosting
-      #   uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      #   with:
-      #     server: aneeshaengltd.com
-      #     username: ${{ secrets.FTP_USERNAME }}
-      #     password: ${{ secrets.FTP_PASSWORD }}
-      #     local-dir: build/web/
-      #     server-dir: /flutter.aneeshaengltd.com/
-
-
-
-      # Build iOS IPA-> ios will be deployed due to profiles
-      # 12.
+#       Build iOS Archive without Codesign
+#      - name: Flutter build IPA (no codesign)
+#        run: flutter build ipa --no-codesign
+#
+#      # Export IPA from Xcode archive
+#      - name: Export IPA from archive
+#        run: |
+#          xcodebuild -exportArchive \
+#            -archivePath build/ios/archive/Runner.xcarchive \
+#            -exportOptionsPlist ios/ExportOptions.plist \
+#            -exportPath build/ios/ipa
+#
+#      # Upload IPA to Firebase
+#      - name: Upload IPA to Firebase App Distribution
+#        run: |
+#          firebase appdistribution:distribute build/ios/ipa/Runner.ipa \
+#            --app ${{ secrets.FIREBASE_APP_ID_IOS }} \
+#            --token ${{ secrets.FIREBASE_CLI_TOKEN }} \
+#            --groups "office"
+#
+#
+#
+#       # Deploy to cPanel via FTP (web app)
+#       - name: Deploy to cPanel Hosting
+#         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+#         with:
+#           server: aneeshaengltd.com
+#           username: ${{ secrets.FTP_USERNAME }}
+#           password: ${{ secrets.FTP_PASSWORD }}
+#           local-dir: build/web/
+#           server-dir: /flutter.aneeshaengltd.com/
+#
+#
+#
+#       Build iOS IPA-> ios will be deployed due to profiles
+#       12.
 #          ios will be deployed due to profiles issue.
-
+#
 #          You may face given problem, However I disabled ios deploy section.
 #          Failed to build iOS app
 #          Error (Xcode): No profiles for 'com.samir.flutterGithubCicd' were found: Xcode couldn't find any iOS App Development provisioning profiles matching 'com.samir.flutterGithubCicd'. Automatic signing is disabled and unable to generate a profile. To enable automatic signing, pass -allowProvisioningUpdates to xcodebuild.
