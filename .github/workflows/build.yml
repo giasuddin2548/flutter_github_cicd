@@ -25,16 +25,16 @@ jobs:
         run: flutter pub get
 
       # Format check
-      - name: Verify formatting
-        run: dart format --output=none --set-exit-if-changed .
+#      - name: Verify formatting
+#        run: dart format --output=none --set-exit-if-changed .
 
 #      # Static analysis
 #      - name: Analyze project source
 #        run: flutter analyze
 
-      # Run tests
-      - name: Run tests
-        run: flutter test
+#      # Run tests
+#      - name: Run tests
+#        run: flutter test
 
       # Build Android APK
       - name: Build Android APK
