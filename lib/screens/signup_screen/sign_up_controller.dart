@@ -52,19 +52,19 @@ class SignUpController extends GetxController {
               AppConstant.showMyToast(response.data['message']);
 
               await SecureService().setStringSessionData(
-                myValue: "${mobileNoController.text}",
+                myValue: mobileNoController.text,
                 myKey: "regtmpdata1",
               );
               await SecureService().setStringSessionData(
-                myValue: "${fullNameController.text}",
+                myValue: fullNameController.text,
                 myKey: "regtmpdata2",
               );
               await SecureService().setStringSessionData(
-                myValue: "${passwordController.text}",
+                myValue: passwordController.text,
                 myKey: "regtmpdata3",
               );
               await SecureService().setStringSessionData(
-                myValue: "${companyNameController.text}",
+                myValue: companyNameController.text,
                 myKey: "regtmpdata4",
               );
 
@@ -145,8 +145,8 @@ class SignUpController extends GetxController {
   String validateMobile(String value) {
     String pattern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
 
-    RegExp regExp = new RegExp(pattern);
-    if (value.length == 0) {
+    RegExp regExp = RegExp(pattern);
+    if (value.isEmpty) {
       return 'Please enter mobile number';
     } else if (!regExp.hasMatch(value)) {
       return 'Please enter valid mobile number';

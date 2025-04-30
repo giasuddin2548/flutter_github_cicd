@@ -9,6 +9,8 @@ import 'dashboard_controller.dart';
 class DashboardScreen extends StatefulWidget {
   static const routeName = '/dashboardScreen';
 
+  const DashboardScreen({super.key});
+
   @override
   State<DashboardScreen> createState() => _DashboardScreenState();
 }

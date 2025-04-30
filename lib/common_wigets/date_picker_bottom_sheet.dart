@@ -12,7 +12,7 @@ class DatePickerBottomSheet extends StatelessWidget {
   TextEditingController editingController;
   String title;
 
-  DatePickerBottomSheet({required this.editingController, required this.title});
+  DatePickerBottomSheet({super.key, required this.editingController, required this.title});
 
   @override
   Widget build(BuildContext context) {

@@ -13,6 +13,8 @@ class AddAccountScreen extends StatelessWidget {
     AddAccountController(DioService(dioInterceptor: DioInterceptor())),
   );
 
+  const AddAccountScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     _controller.currentStep.value = 0;

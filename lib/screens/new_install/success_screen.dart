@@ -5,6 +5,8 @@ import 'package:flutter_github_cicd/screens/homePage/home_page.dart';
 class SuccessScreen extends StatelessWidget {
   static const routeName = '/SuccessScreen';
 
+  const SuccessScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

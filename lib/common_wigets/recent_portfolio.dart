@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 class RecentTransactionsCard extends StatelessWidget {
   final List<PortfolioPerformance> performanceList;
-  RecentTransactionsCard({required this.performanceList});
+  const RecentTransactionsCard({super.key, required this.performanceList});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class RecentTransactionsCard extends StatelessWidget {
 class TransactionRow extends StatelessWidget {
   final PortfolioPerformance portfolioPerformance;
 
-  const TransactionRow({required this.portfolioPerformance});
+  const TransactionRow({super.key, required this.portfolioPerformance});
 
   @override
   Widget build(BuildContext context) {

@@ -152,7 +152,7 @@ class MyForm {
     map.forEach((key, value) {
       mapData[key] = value;
     });
-    print("Manikkk Before_> ${mapData}");
+    print("Manikkk Before_> $mapData");
     mapData["investor_photo"] = await MultipartFile.fromFile(file1.path);
     mapData["investor_nid_photo"] = await MultipartFile.fromFile(file2.path);
     mapData["investor_signature"] = await MultipartFile.fromFile(file3.path);

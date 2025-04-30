@@ -16,6 +16,8 @@ class WithdrawScreen extends StatelessWidget {
   );
 
   static const routeName = '/withdraw_screen';
+
+  const WithdrawScreen({super.key});
   @override
   Widget build(BuildContext context) {
     _controller.getBalance();
@@ -303,7 +305,7 @@ class WithdrawScreen extends StatelessWidget {
                   // ),
                   Obx(
                     () => IntrinsicHeight(
-                      child: Container(
+                      child: SizedBox(
                         height: 310,
                         width: itemSize * itemCount + dividerSize + extraSize,
                         child: ListView.separated(

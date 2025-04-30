@@ -50,7 +50,6 @@ class ComplainController extends GetxController {
           AppConstant.internetConnectionAlertDialog();
         }
       });
-    } catch (e) {
     } finally {
       // EasyLoading.dismiss();
     }
@@ -80,7 +79,6 @@ class ComplainController extends GetxController {
           AppConstant.internetConnectionAlertDialog();
         }
       });
-    } catch (e) {
     } finally {
       EasyLoading.dismiss();
       getRecentData();

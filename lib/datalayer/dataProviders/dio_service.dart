@@ -52,7 +52,7 @@ class DioService {
       var response = await _dio.post(
         urlEndPoint,
         data: formData,
-        options: Options(headers: {'token': "$token"}),
+        options: Options(headers: {'token': token}),
       );
       return response;
     } on DioException catch (ex) {
@@ -80,7 +80,7 @@ class DioService {
       var response = await _dio.get(
         urlEndPoint,
         data: FormData.fromMap(data),
-        options: Options(headers: {'token': "$token"}),
+        options: Options(headers: {'token': token}),
       );
       return response;
     } on DioException catch (ex) {
@@ -107,7 +107,7 @@ class DioService {
       var response = await _dio.post(
         urlEndPoint,
         data: data,
-        options: Options(headers: {'token': "$token"}),
+        options: Options(headers: {'token': token}),
       );
       return response;
     } on DioException catch (ex) {
@@ -124,7 +124,7 @@ class DioService {
       var response = await _dio.post(
         urlEndPoint,
         data: data,
-        options: Options(headers: {'token': "$token"}),
+        options: Options(headers: {'token': token}),
       );
       return response;
     } on DioException catch (ex) {
@@ -194,7 +194,7 @@ class DioService {
       var token = await SecureService().getStringSessionData(AppConstant.token);
       var response = await _dio.get(
         urlEndPoint,
-        options: Options(headers: {'token': "$token"}),
+        options: Options(headers: {'token': token}),
       );
       return response;
     } on DioException catch (ex) {

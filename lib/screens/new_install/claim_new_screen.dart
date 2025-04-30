@@ -15,6 +15,8 @@ class ClaimNewScreen extends StatelessWidget {
   );
   final loginFormKey = GlobalKey<FormState>();
 
+  ClaimNewScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;

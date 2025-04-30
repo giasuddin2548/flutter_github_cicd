@@ -7,7 +7,7 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 class CustomPieChartWithLegend extends StatelessWidget {
   final List<SectorWiseInvestment> sectorWiseInvestment;
   final random = Random();
-  CustomPieChartWithLegend({required this.sectorWiseInvestment});
+  CustomPieChartWithLegend({super.key, required this.sectorWiseInvestment});
 
   @override
   Widget build(BuildContext context) {

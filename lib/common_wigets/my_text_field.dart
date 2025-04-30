@@ -11,7 +11,7 @@ class MyTextField extends StatelessWidget {
   final bool isRequired;
   final Function(String)? onChangedCallback;
 
-  MyTextField({
+  const MyTextField({super.key, 
     required this.editingController,
     required this.enableOrDisable,
     required this.hints,
@@ -108,7 +108,7 @@ class MyTextFieldd extends StatelessWidget {
   final bool isRequired;
   final Function(String)? onChangedCallback;
 
-  MyTextFieldd({
+  const MyTextFieldd({super.key, 
     required this.editingController,
     required this.enableOrDisable,
     required this.hints,
@@ -209,7 +209,7 @@ class MyTextFielPass extends StatelessWidget {
   final Widget widget;
   final Function(String)? onChangedCallback;
 
-  MyTextFielPass({
+  const MyTextFielPass({super.key, 
     required this.editingController,
     required this.enableOrDisable,
     required this.hints,
@@ -223,7 +223,7 @@ class MyTextFielPass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 40,
       // margin: const EdgeInsets.only(left: 20, right: 20),
       child: TextFormField(
@@ -310,7 +310,7 @@ class MyTextFieldOnChanged extends StatelessWidget {
   bool isRequired;
   Function(String v) onChanged;
 
-  MyTextFieldOnChanged({
+  MyTextFieldOnChanged({super.key, 
     required this.editingController,
     required this.enableOrDisable,
     required this.hints,
@@ -407,7 +407,7 @@ class MyTextFieldFileChose extends StatelessWidget {
   final bool isRequired;
   final Function(String)? onChangedCallback;
 
-  MyTextFieldFileChose({
+  const MyTextFieldFileChose({super.key, 
     required this.editingController,
     required this.enableOrDisable,
     required this.hints,

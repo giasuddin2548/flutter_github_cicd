@@ -12,7 +12,7 @@ class GlobalTextField extends StatelessWidget {
   final String? Function(String?)? validator;
 
   const GlobalTextField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.hint,
     required this.label,
@@ -22,7 +22,7 @@ class GlobalTextField extends StatelessWidget {
     required this.isEnabled,
     required this.onChangedCallback,
     this.validator,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

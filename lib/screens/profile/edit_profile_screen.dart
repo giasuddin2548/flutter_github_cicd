@@ -17,6 +17,8 @@ class EditProfileScreen extends StatelessWidget {
   );
   final loginFormKey = GlobalKey<FormState>();
 
+  EditProfileScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     _controller.getDistict();
@@ -126,7 +128,7 @@ class EditProfileScreen extends StatelessWidget {
 
   Widget _buildProfileImage(Size size) {
     return Center(
-      child: Container(
+      child: SizedBox(
         height: size.height * 0.15,
         child: Stack(
           alignment: Alignment.center,

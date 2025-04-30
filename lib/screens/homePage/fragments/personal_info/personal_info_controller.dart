@@ -30,7 +30,6 @@ class PersonalInfoController extends GetxController
           AppConstant.internetConnectionAlertDialog();
         }
       });
-    } catch (e) {
     } finally {
       EasyLoading.dismiss();
     }

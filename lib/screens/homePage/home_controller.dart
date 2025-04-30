@@ -27,8 +27,7 @@ class HomeController extends GetxController {
       AppConstant.userName,
     );
     userEmail.value =
-        "User ID: " +
-        await SecureService().getStringSessionData(AppConstant.userEmployee_id);
+        "User ID: ${await SecureService().getStringSessionData(AppConstant.userEmployee_id)}";
     userImageUrl.value = await SecureService().getStringSessionData(
       AppConstant.userProfile_image,
     );

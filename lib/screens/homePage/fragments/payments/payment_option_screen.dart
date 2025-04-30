@@ -10,6 +10,8 @@ class PaymentOptionScreen extends StatelessWidget {
     PaymentsScreenController(DioService(dioInterceptor: DioInterceptor())),
   );
 
+  const PaymentOptionScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -147,7 +149,7 @@ class PaymentOptionScreen extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Container(
+          SizedBox(
             height: 60,
             width: 80,
             child: Image.memory(_controller.imageConvertor(assetPath)),

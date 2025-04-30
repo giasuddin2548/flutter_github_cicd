@@ -14,6 +14,8 @@ class PersonalInfo extends StatelessWidget {
     PersonalInfoController(DioService(dioInterceptor: DioInterceptor())),
   );
 
+  const PersonalInfo({super.key});
+
   @override
   Widget build(BuildContext context) {
     _controller.getProfileData();
@@ -32,14 +34,16 @@ class PersonalInfo extends StatelessWidget {
 }
 
 class ProfileTab extends StatelessWidget {
+  const ProfileTab({super.key});
+
   @override
   Widget build(BuildContext context) {
-    final _controller = Get.put(
+    final controller = Get.put(
       PersonalInfoController(DioService(dioInterceptor: DioInterceptor())),
     );
     return Container(
       child: SingleChildScrollView(
-        controller: _controller.scrollController,
+        controller: controller.scrollController,
         scrollDirection: Axis.vertical,
         physics: const ScrollPhysics(),
         child: Column(
@@ -70,7 +74,7 @@ class ProfileTab extends StatelessWidget {
 
                     DashboardInfoItem(
                       "Full Name",
-                      _controller
+                      controller
                               .profileData
                               .value
                               .investorInformation
@@ -80,7 +84,7 @@ class ProfileTab extends StatelessWidget {
                     SizedBox(height: 3),
                     DashboardInfoItem(
                       "Company Name",
-                      _controller
+                      controller
                               .profileData
                               .value
                               .investorInformation
@@ -90,7 +94,7 @@ class ProfileTab extends StatelessWidget {
                     SizedBox(height: 3),
                     DashboardInfoItem(
                       "District",
-                      _controller
+                      controller
                               .profileData
                               .value
                               .investorInformation
@@ -100,7 +104,7 @@ class ProfileTab extends StatelessWidget {
                     SizedBox(height: 3),
                     DashboardInfoItem(
                       "Thana",
-                      _controller
+                      controller
                               .profileData
                               .value
                               .investorInformation
@@ -110,7 +114,7 @@ class ProfileTab extends StatelessWidget {
                     SizedBox(height: 3),
                     DashboardInfoItem(
                       "Village/Street",
-                      _controller
+                      controller
                               .profileData
                               .value
                               .investorInformation
@@ -120,7 +124,7 @@ class ProfileTab extends StatelessWidget {
                     SizedBox(height: 3),
                     DashboardInfoItem(
                       "Phone Number",
-                      _controller
+                      controller
                               .profileData
                               .value
                               .investorInformation
@@ -130,7 +134,7 @@ class ProfileTab extends StatelessWidget {
                     SizedBox(height: 3),
                     DashboardInfoItem(
                       "Office Phone Number",
-                      _controller
+                      controller
                               .profileData
                               .value
                               .investorInformation
@@ -140,7 +144,7 @@ class ProfileTab extends StatelessWidget {
                     SizedBox(height: 3),
                     DashboardInfoItem(
                       "Date of Birth",
-                      _controller
+                      controller
                               .profileData
                               .value
                               .investorInformation
@@ -150,7 +154,7 @@ class ProfileTab extends StatelessWidget {
                     SizedBox(height: 3),
                     DashboardInfoItem(
                       "Office ID Number",
-                      _controller
+                      controller
                               .profileData
                               .value
                               .investorInformation
@@ -160,7 +164,7 @@ class ProfileTab extends StatelessWidget {
                     SizedBox(height: 3),
                     DashboardInfoItem(
                       "NID/Birth Certificate",
-                      _controller
+                      controller
                               .profileData
                               .value
                               .investorInformation
@@ -182,6 +186,8 @@ class ActivityTab extends StatelessWidget {
   final _controller = Get.put(
     PersonalInfoController(DioService(dioInterceptor: DioInterceptor())),
   );
+
+  const ActivityTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -330,7 +336,7 @@ class ActivityTab extends StatelessWidget {
                   // ),
                   IntrinsicHeight(
                     child: Obx(
-                      () => Container(
+                      () => SizedBox(
                         height: 310,
                         width: itemSize * itemCount + dividerSize + extraSize,
                         child: ListView.separated(
@@ -486,6 +492,8 @@ class JointTab extends StatelessWidget {
     PersonalInfoController(DioService(dioInterceptor: DioInterceptor())),
   );
 
+  const JointTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return _tableData(context);
@@ -633,7 +641,7 @@ class JointTab extends StatelessWidget {
                   // ),
                   IntrinsicHeight(
                     child: Obx(
-                      () => Container(
+                      () => SizedBox(
                         height: 310,
                         width: itemSize * itemCount + dividerSize + extraSize,
                         child: ListView.separated(

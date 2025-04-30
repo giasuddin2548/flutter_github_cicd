@@ -11,7 +11,7 @@ class CashScreen extends StatelessWidget {
   );
 
   PaymentModel paymentModel;
-  CashScreen(this.paymentModel);
+  CashScreen(this.paymentModel, {super.key});
 
   @override
   Widget build(BuildContext context) {

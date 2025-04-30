@@ -8,7 +8,7 @@ class TitleDataWidget extends StatelessWidget {
   String dataAlignment;
   bool? isRequired = false;
 
-  TitleDataWidget({
+  TitleDataWidget({super.key, 
     required this.title,
     required this.data,
     required this.titleAlignment,

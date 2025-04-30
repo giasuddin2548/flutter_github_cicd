@@ -7,7 +7,7 @@ class MyWebLoader extends StatefulWidget {
   final String url;
   final String title;
 
-  MyWebLoader(this.url, this.title);
+  const MyWebLoader(this.url, this.title, {super.key});
 
   @override
   State<MyWebLoader> createState() => _MyWebLoaderState();

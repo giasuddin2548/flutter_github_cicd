@@ -11,6 +11,8 @@ class ProductScreen extends StatelessWidget {
     ProductScreenController(DioService(dioInterceptor: DioInterceptor())),
   );
 
+  const ProductScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;

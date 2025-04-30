@@ -13,6 +13,8 @@ class HomePage extends StatelessWidget {
   // final _controller = Get.put(NotificationController(DioService(dioInterceptor: DioInterceptor())));
   var scaffoldKey = GlobalKey<ScaffoldState>();
 
+  HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(

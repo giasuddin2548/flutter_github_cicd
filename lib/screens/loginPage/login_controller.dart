@@ -72,15 +72,15 @@ class LoginController extends GetxController
                 myKey: AppConstant.userEmployee_id,
               );
               await SecureService().setStringSessionData(
-                myValue: "${loginData.user?.name ?? ''}",
+                myValue: loginData.user?.name ?? '',
                 myKey: AppConstant.userName,
               );
               await SecureService().setStringSessionData(
-                myValue: "${loginData.user?.phone ?? ''}",
+                myValue: loginData.user?.phone ?? '',
                 myKey: AppConstant.userPhone,
               );
               await SecureService().setStringSessionData(
-                myValue: "${loginData.user?.profileImage ?? ''}",
+                myValue: loginData.user?.profileImage ?? '',
                 myKey: AppConstant.userProfile_image,
               );
 

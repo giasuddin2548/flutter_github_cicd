@@ -15,6 +15,8 @@ class PromotinalAdminEditAdd extends StatelessWidget {
     PromotinalController(DioService(dioInterceptor: DioInterceptor())),
   );
   var depositPageKey = GlobalKey<FormState>();
+
+  PromotinalAdminEditAdd({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

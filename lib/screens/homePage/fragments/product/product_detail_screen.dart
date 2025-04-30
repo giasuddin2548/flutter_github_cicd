@@ -11,7 +11,7 @@ class ProductDetailScreen extends StatelessWidget {
   static const routeName = '/ProductDetailScreen';
   final NetisProductModel productModel;
 
-  ProductDetailScreen(this.productModel, {Key? key}) : super(key: key);
+  ProductDetailScreen(this.productModel, {super.key});
 
   final _controller = Get.put(
     ProductScreenController(DioService(dioInterceptor: DioInterceptor())),
@@ -138,7 +138,7 @@ class ProductDetailScreen extends StatelessWidget {
 
 class BulletPoint extends StatelessWidget {
   final String text;
-  const BulletPoint({required this.text});
+  const BulletPoint({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {

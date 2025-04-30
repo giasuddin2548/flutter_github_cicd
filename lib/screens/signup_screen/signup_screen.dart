@@ -14,6 +14,8 @@ class SignupScreen extends StatelessWidget {
   );
   final loginFormKey = GlobalKey<FormState>();
 
+  SignupScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     _controller.fullNameController.text = 'John Doe';

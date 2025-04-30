@@ -8,7 +8,7 @@ class BarcodeResult extends StatefulWidget {
   static const routeName = '/BarcodeResult';
 
   final String code;
-  BarcodeResult(this.code, {super.key});
+  const BarcodeResult(this.code, {super.key});
 
   @override
   _BarcodeResultState createState() => _BarcodeResultState();

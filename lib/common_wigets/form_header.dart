@@ -4,7 +4,7 @@ class FormHeader extends StatelessWidget {
   String title;
   bool? required;
 
-  FormHeader({required this.title, this.required = false});
+  FormHeader({super.key, required this.title, this.required = false});
 
   @override
   Widget build(BuildContext context) {

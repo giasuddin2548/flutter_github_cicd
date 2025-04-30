@@ -6,6 +6,8 @@ import 'package:flutter_github_cicd/screens/new_install/barcode_result.dart';
 class MyScannerScreen extends StatefulWidget {
   static const routeName = '/MyScannerScreen';
 
+  const MyScannerScreen({super.key});
+
   @override
   _MyScannerScreenState createState() => _MyScannerScreenState();
 }
@@ -25,8 +27,8 @@ class _MyScannerScreenState extends State<MyScannerScreen> {
             onDetect: (BarcodeCapture capture) {
               if (!_isScanning) return; // Prevent multiple scans
 
-              final Barcode? barcode = capture.barcodes.first;
-              final String? code = barcode?.rawValue;
+              final Barcode barcode = capture.barcodes.first;
+              final String? code = barcode.rawValue;
 
               if (code != null) {
                 _isScanning = false; // Stop scanning

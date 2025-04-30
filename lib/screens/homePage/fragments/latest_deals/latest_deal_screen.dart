@@ -9,6 +9,8 @@ class LatestDealScreen extends StatelessWidget {
     LatestDealScreenController(DioService(dioInterceptor: DioInterceptor())),
   );
 
+  const LatestDealScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     _controller.getProduct(context);

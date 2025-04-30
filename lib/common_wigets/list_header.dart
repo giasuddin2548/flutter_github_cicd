@@ -12,7 +12,7 @@ class ListHeader extends StatelessWidget {
   final Color color;
   final double height;
 
-  ListHeader({
+  const ListHeader({super.key, 
     required this.corner,
     required this.align,
     required this.title,

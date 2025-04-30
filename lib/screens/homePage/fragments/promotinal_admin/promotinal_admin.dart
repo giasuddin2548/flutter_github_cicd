@@ -13,6 +13,8 @@ class PromotinalAdmin extends StatelessWidget {
   final PromotinalController _controller = Get.put(
     PromotinalController(DioService(dioInterceptor: DioInterceptor())),
   );
+
+  const PromotinalAdmin({super.key});
   @override
   Widget build(BuildContext context) {
     _controller.getAccountName();
@@ -259,7 +261,7 @@ class PromotinalAdmin extends StatelessWidget {
                     //   height: 1,
                     // ),
                     IntrinsicHeight(
-                      child: Container(
+                      child: SizedBox(
                         height: 310,
                         width: itemSize * itemCount + dividerSize + extraSize,
                         child: ListView.separated(

@@ -14,6 +14,8 @@ class PasswordSetup extends StatelessWidget {
   );
   final loginFormKey = GlobalKey<FormState>();
 
+  PasswordSetup({super.key});
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -77,7 +79,7 @@ class PasswordSetup extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
+                                  SizedBox(
                                     width: double.infinity,
                                     child: Pinput(
                                       controller: _controller.otpController,

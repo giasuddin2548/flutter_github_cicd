@@ -477,7 +477,7 @@ class ImageDialog extends StatelessWidget {
   final Uint8List imageUrl;
   final String name;
 
-  ImageDialog({super.key, required this.imageUrl, required this.name});
+  const ImageDialog({super.key, required this.imageUrl, required this.name});
 
   @override
   Widget build(BuildContext context) {

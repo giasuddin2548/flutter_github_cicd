@@ -86,7 +86,7 @@ class NewInstallController extends GetxController {
             "installation_image":
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5m5YjEsicsbD_2y3hTygfKShXqdmD7E4wAw%26s",
           };
-          print("claimData ${d}");
+          print("claimData $d");
           var response = await dataProvider.getDataWithParams(
             urlEndPoint: url,
             data: d,

@@ -343,7 +343,7 @@ class AppConstant {
               ),
             ),
             Divider(height: 1),
-            Container(
+            SizedBox(
               // color: Colors.yellow,
               height: 20 / 100 * Get.size.height,
               child: CupertinoDatePicker(

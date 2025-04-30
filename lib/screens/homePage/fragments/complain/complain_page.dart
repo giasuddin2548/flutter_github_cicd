@@ -13,9 +13,11 @@ import 'complain_controller.dart';
 class ComplainScreen extends StatelessWidget {
   static const routeName = '/complain_screen';
 
-  ComplainController _controller = Get.put(
+  final ComplainController _controller = Get.put(
     ComplainController(DioService(dioInterceptor: DioInterceptor())),
   );
+
+  ComplainScreen({super.key});
   @override
   Widget build(BuildContext context) {
     _controller.getRecentData();
@@ -338,7 +340,7 @@ class ComplainScreen extends StatelessWidget {
                   // ),
                   IntrinsicHeight(
                     child: Obx(
-                      () => Container(
+                      () => SizedBox(
                         height: 310,
                         width: itemSize * itemCount + dividerSize + extraSize,
                         child: ListView.separated(

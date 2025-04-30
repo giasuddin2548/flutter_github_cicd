@@ -16,6 +16,8 @@ import '../../../../utils/app_constent.dart';
 class UpdateProfileScreen extends StatelessWidget {
   static const routeName = '/update_profile_screen';
 
+  const UpdateProfileScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -58,6 +60,8 @@ class ProfileTab extends StatelessWidget {
   final _controller = Get.put(
     UpdateProfileController(DioService(dioInterceptor: DioInterceptor())),
   );
+
+  const ProfileTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -287,6 +291,8 @@ class ActivityTab extends StatelessWidget {
     UpdateProfileController(DioService(dioInterceptor: DioInterceptor())),
   );
 
+  const ActivityTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     _controller.getTabActivities();
@@ -331,7 +337,7 @@ class TimelineItem extends StatelessWidget {
   final String date;
   final String title;
 
-  const TimelineItem({required this.date, required this.title});
+  const TimelineItem({super.key, required this.date, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -387,6 +393,8 @@ class UpdateTab extends StatelessWidget {
     "Account No.",
     "Cheque",
   ];
+
+  UpdateTab({super.key});
 
   void handleOption(String option) {
     switch (option) {
@@ -921,7 +929,7 @@ class UpdateTab extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
               onChanged: (value) {
-                _controller.branchIDTextField.text = "${value?.branchId ?? ''}";
+                _controller.branchIDTextField.text = value?.branchId ?? '';
               },
               validator: (v) {
                 if (v == null) {

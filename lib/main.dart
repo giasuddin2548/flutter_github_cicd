@@ -27,7 +27,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   var savedThemeMode;
-  MyApp(this.savedThemeMode);
+  MyApp(this.savedThemeMode, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
           builder:
               (theme, darkTheme) => GetMaterialApp(
                 debugShowCheckedModeBanner: false,
-                title: 'Netis Reward',
+                title: 'eService',
                 smartManagement: SmartManagement.full,
                 theme: theme,
                 darkTheme: darkTheme,

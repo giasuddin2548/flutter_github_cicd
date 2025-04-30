@@ -5,7 +5,7 @@ class DashboardInfoItem extends StatelessWidget {
   String title;
   String data;
 
-  DashboardInfoItem(this.title, this.data);
+  DashboardInfoItem(this.title, this.data, {super.key});
 
   @override
   Widget build(BuildContext context) {

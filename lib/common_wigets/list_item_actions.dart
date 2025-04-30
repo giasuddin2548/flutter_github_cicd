@@ -10,7 +10,7 @@ class DashItemActions extends StatelessWidget {
   Callback callback;
   int position;
 
-  DashItemActions({
+  DashItemActions({super.key, 
     required this.title,
     required this.data,
     required this.callback,
@@ -100,7 +100,7 @@ class ListItemActions extends StatelessWidget {
   Callback callback;
   int position;
 
-  ListItemActions({
+  ListItemActions({super.key, 
     required this.corner,
     required this.align,
     required this.title,

@@ -83,7 +83,7 @@ class UpdateProfileController extends GetxController {
             boAccountNoTextField.text = profileData.value.boAccountNo ?? '';
             accountNoTextField.text = profileData.value.bankAccountNo ?? '';
             branchDefaultData.value = BranchDataModel(
-              branchName: "${profileData.value.branchName ?? ''}",
+              branchName: profileData.value.branchName ?? '',
               branchId: "${profileData.value.branchId ?? ''}",
             );
             branchIDTextField.text = "${profileData.value.branchId ?? ''}";
@@ -93,7 +93,6 @@ class UpdateProfileController extends GetxController {
           AppConstant.internetConnectionAlertDialog();
         }
       });
-    } catch (e) {
     } finally {
       getBankName();
       EasyLoading.dismiss();
@@ -205,7 +204,6 @@ class UpdateProfileController extends GetxController {
           AppConstant.internetConnectionAlertDialog();
         }
       });
-    } catch (e) {
     } finally {
       EasyLoading.dismiss();
     }
@@ -411,7 +409,6 @@ class UpdateProfileController extends GetxController {
           AppConstant.internetConnectionAlertDialog();
         }
       });
-    } catch (e) {
     } finally {
       EasyLoading.dismiss();
     }
@@ -437,7 +434,6 @@ class UpdateProfileController extends GetxController {
           AppConstant.internetConnectionAlertDialog();
         }
       });
-    } catch (e) {
     } finally {
       EasyLoading.dismiss();
     }

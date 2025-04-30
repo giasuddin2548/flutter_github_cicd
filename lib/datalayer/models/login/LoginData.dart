@@ -9,18 +9,18 @@ class LoginData {
   LoginData.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
-    user = json['user'] != null ? new User.fromJson(json['user']) : null;
+    user = json['user'] != null ? User.fromJson(json['user']) : null;
     accessToken = json['access_token'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['status'] = this.status;
-    data['message'] = this.message;
-    if (this.user != null) {
-      data['user'] = this.user!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['status'] = status;
+    data['message'] = message;
+    if (user != null) {
+      data['user'] = user!.toJson();
     }
-    data['access_token'] = this.accessToken;
+    data['access_token'] = accessToken;
     return data;
   }
 }
@@ -49,12 +49,12 @@ class User {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['user_id'] = this.userId;
-    data['employee_id'] = this.employeeId;
-    data['name'] = this.name;
-    data['phone'] = this.phone;
-    data['profile_image'] = this.profileImage;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['user_id'] = userId;
+    data['employee_id'] = employeeId;
+    data['name'] = name;
+    data['phone'] = phone;
+    data['profile_image'] = profileImage;
     return data;
   }
 }

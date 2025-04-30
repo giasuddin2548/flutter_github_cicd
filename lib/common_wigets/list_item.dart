@@ -10,7 +10,7 @@ class ListItem extends StatelessWidget {
   final Callback callback;
   final int position;
 
-  ListItem({
+  const ListItem({super.key, 
     required this.corner,
     required this.align,
     required this.title,
@@ -81,7 +81,7 @@ class TaskRow extends StatelessWidget {
   final String align;
   final double size;
 
-  TaskRow({required this.item, required this.align, required this.size});
+  const TaskRow({super.key, required this.item, required this.align, required this.size});
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +120,7 @@ class ListItemAction extends StatelessWidget {
   final Callback callback2;
   final int position;
 
-  ListItemAction({
+  const ListItemAction({super.key, 
     required this.corner,
     required this.align,
     required this.title,
