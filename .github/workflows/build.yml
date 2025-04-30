@@ -66,17 +66,18 @@ jobs:
 
 
 
-#      # Build iOS IPA-> ios will be deployed due to profiles
-#      - name: Build iOS IPA
-#        run: flutter build ipa --release --export-options-plist=ios/ExportOptions.plist
-#
-#      # Upload IPA to Firebase using Firebase CLI (required for macOS runner)
-#      - name: Upload IPA to Firebase App Distribution
-#        run: |
-#          firebase appdistribution:distribute build/ios/ipa/Runner.ipa \
-#          --app ${{ secrets.FIREBASE_APP_ID_IOS }} \
-#          --token ${{ secrets.FIREBASE_CLI_TOKEN }} \
-#          --groups "office"
+      # Build iOS IPA-> ios will be deployed due to profiles
+      - name: Build iOS IPA
+        run: flutter build ipa --no-codesign
+
+
+      # Upload IPA to Firebase using Firebase CLI (required for macOS runner)
+      - name: Upload IPA to Firebase App Distribution
+        run: |
+          firebase appdistribution:distribute build/ios/ipa/Runner.ipa \
+          --app ${{ secrets.FIREBASE_APP_ID_IOS }} \
+          --token ${{ secrets.FIREBASE_CLI_TOKEN }} \
+          --groups "office"
 
 
 #          ios will be deployed due to profiles issue.
